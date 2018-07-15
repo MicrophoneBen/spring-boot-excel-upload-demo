@@ -10,6 +10,6 @@ import java.util.List;
  * Created by xschen on 9/11/2017.
  */
 public interface ProductApi {
-   Product saveProduct(Product newProduct);
-   List<Product> findAll();
+   public Product saveProduct(Product newProduct);
+   public List<Product> findAll();
 }

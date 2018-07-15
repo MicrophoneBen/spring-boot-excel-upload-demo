@@ -7,7 +7,7 @@ import java.io.Serializable;
  * Created by xschen on 10/7/2016.
  */
 public class DataColumn implements Serializable {
-    private String name = "";
+    private String name;
     private int columnIndex;
 
     public DataColumn(){

@@ -1,6 +1,5 @@
 package com.github.chen0040.bootslingshot.viewmodels;
 
-
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,65 +11,124 @@ import java.util.*;
 @Getter
 @Setter
 public class Product {
-   private static Random random = new Random();
+	private String error;
 
-   private String sku;
+	private String tags;
 
-   private String name;
+	private String token;
 
-   private double price = 10;
-   private int status  = 0;
-   private int visibility = 0;
+	private String sku;
 
+	private String name;
 
-   private Date createdAt;
+	private double price;
 
-   private Date updatedAt; // format 2017-05-03 03:46:13
+	private double weight;
 
-   private double weight;
+	private double rating;
 
-   private String type = "";
+	private String vendor;
 
-   private long position = 0;
+	private int status = 0;
 
-   private List<String> links = new ArrayList<>();
+	private int visibility = 0;
 
-   private List<Double> prices = new ArrayList<>();
+	private long position;
 
-   private String vendor;
-   private Map<String, String> attributes = new HashMap<>();
+	private Date createdAt;
 
-   private String error;
+	private Date updatedAt; // format 2017-05-03 03:46:13
 
-   private double rating;
+	private String type;
 
-   private String tags = "";
+	private List<String> links = new ArrayList<>();
 
-   private String token;
+	private static Random random = new Random();
 
-   public Product() {
+	private List<Double> prices = new ArrayList<>();
 
-   }
+	private Map<String, String> attributes = new HashMap<>();
 
-   public Product(String vendor, String productName, String sku, double price, double weight, Map<String, String> properties, List<Double> pricings, String tags) {
-      this.name = productName;
-      this.vendor = vendor;
-      this.sku = sku;
-      this.price = price;
-      this.weight = weight;
-      this.attributes = properties;
-      this.prices = pricings;
-      this.rating = random.nextInt(3) + 2;
-      this.tags = tags;
-   }
+	public String getSku() {
+		return sku;
+	}
 
-   public static Product createAlert(String errorMessage) {
-      Product product = new Product();
-      return product.alert(errorMessage);
-   }
+	public void setSku(String sku) {
+		this.sku = sku;
+	}
 
-   public Product alert(String errorMessage) {
-      error = errorMessage;
-      return this;
-   }
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public double getPrice() {
+		return price;
+	}
+
+	public void setPrice(double price) {
+		this.price = price;
+	}
+
+	public double getWeight() {
+		return weight;
+	}
+
+	public void setWeight(double weight) {
+		this.weight = weight;
+	}
+
+	public String getVendor() {
+		return vendor;
+	}
+
+	public void setVendor(String vendor) {
+		this.vendor = vendor;
+	}
+
+	public Map<String, String> getAttributes() {
+		return attributes;
+	}
+
+	public void setAttributes(Map<String, String> attributes) {
+		this.attributes = attributes;
+	}
+
+	public String getToken() {
+		return token;
+	}
+
+	public void setToken(String token) {
+		this.token = token;
+	}
+
+	public Product() {
+
+	}
+
+	public Product(String vendor, String productName, String sku, double price, double weight,
+			Map<String, String> properties, List<Double> pricings, String tags) {
+		this.name = productName;
+		this.vendor = vendor;
+		this.sku = sku;
+		this.price = price;
+		this.weight = weight;
+		this.attributes = properties;
+		this.prices = pricings;
+		this.rating = random.nextInt(3) + 2;
+		this.tags = tags;
+	}
+
+	public static Product createAlert(String errorMessage) {
+		Product product = new Product();
+		return product.alert(errorMessage);
+	}
+
+	public Product alert(String errorMessage) {
+		error = errorMessage;
+		return this;
+	}
 }
