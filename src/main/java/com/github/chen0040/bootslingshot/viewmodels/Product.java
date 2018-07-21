@@ -12,41 +12,23 @@ import java.util.*;
 @Setter
 public class Product {
 	private String error;
-
 	private String tags;
-
 	private String token;
-
 	private String sku;
-
 	private String name;
-
 	private double price;
-
 	private double weight;
-
 	private double rating;
-
 	private String vendor;
-
 	private int status = 0;
-
 	private int visibility = 0;
-
 	private long position;
-
 	private Date createdAt;
-
 	private Date updatedAt; // format 2017-05-03 03:46:13
-
 	private String type;
-
 	private List<String> links = new ArrayList<>();
-
 	private static Random random = new Random();
-
 	private List<Double> prices = new ArrayList<>();
-
 	private Map<String, String> attributes = new HashMap<>();
 
 	public String getSku() {
